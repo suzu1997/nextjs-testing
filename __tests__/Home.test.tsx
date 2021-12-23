@@ -6,5 +6,5 @@ import Home from '../src/pages/index';
 it('Should render hello text', () => {
   render(<Home />); // Homeコンポーネントをレンダリングする HTML情報を取得する
   screen.debug(); // デバッグ用のコンソールにレンダリングしたHTML情報を表示する
-  expect(screen.getByText('Hello Nextjs')).toBeInTheDocument();
+  expect(screen.getByText('Welcome to Nextjs')).toBeInTheDocument();
 });
