@@ -1,10 +1,11 @@
-import { VFC } from 'react'
+import { VFC } from 'react';
+import { Layout } from '../components/Layout';
 
 const Home: VFC = () => {
   return (
-    <div className="flex justify-center items-center flex-col min-h-screen font-mono text-red-700">
-      Hello Nextjs
-    </div>
-  )
-}
-export default Home
+    <Layout title='Home'>
+      <p className='text-4xl'>Welcome to Nextjs</p>
+    </Layout>
+  );
+};
+export default Home;
