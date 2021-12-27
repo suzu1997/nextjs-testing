@@ -1,7 +1,7 @@
-import { VFC } from 'react';
+import { NextPage } from 'next';
 import { Layout } from '../components/Layout';
 
-const ContextPage: VFC = () => {
+const ContextPage: NextPage = () => {
   return (
     <Layout title='Context'>
       <p className='text-4xl'>Context Page</p>

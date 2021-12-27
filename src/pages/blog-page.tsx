@@ -1,7 +1,7 @@
-import { VFC } from 'react';
+import { NextPage } from 'next';
 import { Layout } from '../components/Layout';
 
-const BlogPage: VFC = () => {
+const BlogPage: NextPage = () => {
   return (
     <Layout title='Blog'>
       <p className='text-4xl'>Blog Page</p>
