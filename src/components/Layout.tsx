@@ -21,7 +21,7 @@ export const Layout: FC<Props> = (props) => {
             <div className='flex space-x-4'>
               <Link href='/'>
                 <a
-                  data-testId='home-nav'
+                  data-testid='home-nav'
                   className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'
                 >
                   Home
@@ -29,7 +29,7 @@ export const Layout: FC<Props> = (props) => {
               </Link>
               <Link href='/blog-page'>
                 <a
-                  data-testId='blog-nav'
+                  data-testid='blog-nav'
                   className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'
                 >
                   Blog
@@ -37,7 +37,7 @@ export const Layout: FC<Props> = (props) => {
               </Link>
               <Link href='/comment-page'>
                 <a
-                  data-testId='comment-nav'
+                  data-testid='comment-nav'
                   className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'
                 >
                   Comment
@@ -45,7 +45,7 @@ export const Layout: FC<Props> = (props) => {
               </Link>
               <Link href='/context-page'>
                 <a
-                  data-testId='comment-nav'
+                  data-testid='context-nav'
                   className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'
                 >
                   Context
@@ -53,7 +53,7 @@ export const Layout: FC<Props> = (props) => {
               </Link>
               <Link href='/task-page'>
                 <a
-                  data-testId='task-nav'
+                  data-testid='task-nav'
                   className='text-gray-300 hover:bg-gray-700 px-3 py-2 rounded'
                 >
                   Todos
