@@ -6,7 +6,7 @@ export const CommentComponent: FC<Comment> = (props) => {
   return (
     <li className='mx-10'>
       <p className=''>
-        {id} : {body}
+        {id}: {body}
       </p>
       <p className='text-center mt-3 mb-10'>by {name}</p>
     </li>
