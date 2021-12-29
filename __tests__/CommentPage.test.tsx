@@ -78,6 +78,6 @@ describe('Comment page with useSWR / Success+Error', () => {
       </SWRConfig>,
     );
     expect(await screen.findByText('Error!'));
-    screen.debug();
+    // screen.debug();
   });
 });
