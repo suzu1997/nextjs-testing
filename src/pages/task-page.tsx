@@ -24,7 +24,7 @@ const TaskPage: NextPage<StaticProps> = (props) => {
     fallbackData: staticTasks, // データfetch前に表示する初期データ
     revalidateOnMount: true, // マウント時に最新の情報を取得
   });
-  if (error) return <span>Error!!</span>;
+  if (error) return <span>Error!</span>;
 
   return (
     <Layout title='Todos'>
