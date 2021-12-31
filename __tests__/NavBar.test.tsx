@@ -24,7 +24,6 @@ describe('Navigation by Link', () => {
     userEvent.click(screen.getByTestId('blog-nav'));
     // 非同期の場合は、findByTextでテキストを検索
     expect(await screen.findByText('Blog Page')).toBeInTheDocument();
-    // screen.debug();
 
     userEvent.click(screen.getByTestId('comment-nav'));
     expect(await screen.findByText('Comment Page')).toBeInTheDocument();
