@@ -15,26 +15,30 @@ initTestHelpers();
 // どの URL のリクエストに対して、どのようなレスポンスを返すのかを定義
 const handlers = [
   rest.get(
-    'https://jsonplaceholder.typicode.com/posts/?_limit=10',
+    'https://jsonplaceholder.typicode.com/posts',
     (req, res, ctx) => {
-      return res(
-        // 以下はダミーデータ
-        ctx.status(200),
-        ctx.json([
-          {
-            userId: 1,
-            id: 1,
-            title: 'dummy title 1',
-            body: 'dummy body 1',
-          },
-          {
-            userId: 2,
-            id: 2,
-            title: 'dummy title 2',
-            body: 'dummy body 2',
-          },
-        ]),
-      );
+      const query = req.url.searchParams;
+      const _limit = query.get('_limit');
+      if (_limit === '10') {
+        return res(
+          // 以下はダミーデータ
+          ctx.status(200),
+          ctx.json([
+            {
+              userId: 1,
+              id: 1,
+              title: 'dummy title 1',
+              body: 'dummy body 1',
+            },
+            {
+              userId: 2,
+              id: 2,
+              title: 'dummy title 2',
+              body: 'dummy body 2',
+            },
+          ]),
+        );
+      }
     },
   ),
 ];

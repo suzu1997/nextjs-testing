@@ -10,9 +10,10 @@ import { setupServer } from 'msw/node';
 import CommentPage from '../src/pages/comment-page';
 
 const handlers = [
-  rest.get(
-    'https://jsonplaceholder.typicode.com/comments/?_limit=10',
-    (req, res, ctx) => {
+  rest.get('https://jsonplaceholder.typicode.com/comments', (req, res, ctx) => {
+    const query = req.url.searchParams;
+    const _limit = query.get('_limit');
+    if (_limit === '10') {
       return res(
         ctx.status(200),
         ctx.json([
@@ -32,8 +33,8 @@ const handlers = [
           },
         ]),
       );
-    },
-  ),
+    }
+  }),
 ];
 
 const server = setupServer(...handlers);
@@ -66,9 +67,13 @@ describe('Comment page with useSWR / Success+Error', () => {
     // エラー用にモックサーバの上書き
     server.use(
       rest.get(
-        'https://jsonplaceholder.typicode.com/comments/?_limit=10',
+        'https://jsonplaceholder.typicode.com/comments',
         (req, res, ctx) => {
-          return res(ctx.status(400));
+          const query = req.url.searchParams;
+          const _limit = query.get('_limit');
+          if (_limit === '10') {
+            return res(ctx.status(400));
+          }
         },
       ),
     );
@@ -78,6 +83,5 @@ describe('Comment page with useSWR / Success+Error', () => {
       </SWRConfig>,
     );
     expect(await screen.findByText('Error!'));
-    // screen.debug();
   });
 });
